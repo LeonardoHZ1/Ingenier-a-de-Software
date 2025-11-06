@@ -1,0 +1,18 @@
+graph TD
+A[Inicio] --> B[Usuario inicia sesión]
+B --> C{¿Credenciales válidas?}
+C -- No --> B
+C -- Sí --> D[Mostrar catálogo]
+D --> E[Usuario busca producto]
+E --> F{¿Producto encontrado?}
+F -- No --> E
+F -- Sí --> G[Mostrar detalles del producto]
+G --> H[Agregar al carrito]
+H --> I{¿Seguir comprando?}
+I -- Sí --> D
+I -- No --> J[Usuario ingresa dirección de envío]
+J --> K[Usuario ingresa datos de pago]
+K --> L[Confirmar compra]
+L --> M[Generar número de pedido]
+M --> N[Mostrar confirmación]
+N --> O[Fin]
