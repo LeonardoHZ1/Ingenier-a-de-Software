@@ -1,0 +1,7 @@
+graph TD
+    U[Usuario] -->|Enviar credenciales| A[App]
+    A -->|Solicita la verificación| S[Servidor]
+    S -->|Consultar los datos| BD[(BD)]
+    BD --> S
+    S --> A
+    A -->|Acceso| U
