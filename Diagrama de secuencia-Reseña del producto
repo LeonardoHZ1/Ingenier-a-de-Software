@@ -1,0 +1,12 @@
+sequenceDiagram
+    actor Usuario
+    participant Applicación
+    participant Servidor
+    participant BD
+
+    Usuario->>Applicación: Escribe una reseña
+    Applicación->>Servidor: Enviar la reseña
+    Servidor->>BD: Guardar la reseña
+    BD-->>Servidor: Confirmación
+    Servidor-->>Applicación: 
+    Applicación-->>Usuario: Reseña publicada
