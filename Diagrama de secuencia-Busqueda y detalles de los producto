@@ -1,0 +1,18 @@
+sequenceDiagram
+    actor Usuario
+    participant App
+    participant Servidor
+    participant BD
+
+    Usuario->>App: Busca un producto
+    App->>Servidor: Solicita las coincidencias
+    Servidor->>BD: Consulta los productos
+    BD-->>Servidor: Resultados
+    Servidor-->>App: Lista de productos
+    App-->>Usuario: Muestra los productos
+    Usuario->>App: Selecciona los producto
+    App->>Servidor: Solicita los detalles
+    Servidor->>BD: Lee los detalles
+    BD-->>Servidor: Datos
+    Servidor-->>App: Envía la información
+    App-->>Usuario: Muestra los detalles
