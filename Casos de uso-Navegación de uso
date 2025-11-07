@@ -1,0 +1,17 @@
+@startuml
+actor Usuario
+
+Usuario --> (Explorar las categorías)
+Usuario --> (Filtrar los productos)
+Usuario --> (Administrador)
+Usuario --> (Buscar los producto)
+Usuario --> (Ver detalles del producto)
+Usuario --> (Agregar a lista de deseos)
+
+(Ver detalles del producto) --> (Ver las imágenes) 
+(Ver detalles del producto) --> (Revisar las reseñas)
+
+(Administrador) --> (Administrar las categorías)
+(Administrador) --> (Registrar un nuevo producto)
+
+@enduml
