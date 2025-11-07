@@ -1,0 +1,12 @@
+sequenceDiagram
+    actor Usuario
+    participant Applicación
+    participant Servidor
+    participant BD
+
+    Usuario->>Applicación: Ingresa datos de registro
+    Applicación->>Servidor: Envio de datos
+    Servidor->>BD: Guarda datos del usuario
+    BD-->>Servidor: Confirmación
+    Servidor-->>Applicación: Registro exitoso
+    Applicación-->>Usuario: Cuenta creada
