@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant U as Usuario
+    participant A as Aplicación
+    participant S as Servidor
+    participant PK as Paquetería
+
+    U->>A: Consultar el pedido
+    A->>S: Solicitar el estado
+    S->>PK: Consultar tracking
+    PK-->>S: Estado actualizado
+    S-->>A: Datos completos
+    A-->>U: Mostrar estado
