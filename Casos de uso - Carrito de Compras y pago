@@ -1,21 +1,17 @@
 @startuml
 actor Usuario
 
+Usuario --> (Explorar las categorías)
+Usuario --> (Filtrar los productos)
+Usuario --> (Buscar los producto)
+Usuario --> (Administrador)
+Usuario --> (Ver detalles del producto)
+Usuario --> (Agregar a lista de deseos)
 
-Usuario --> (Agregar los producto al carrito)
-Usuario --> (Eliminar los producto del carrito)
-Usuario --> (Pago)
-Usuario --> (Actualizar las cantidades)
-Usuario --> (Iniciar proceso de pago)
+(Ver detalles del producto) --> (Ver las imágenes) 
+(Ver detalles del producto) --> (Revisar las reseñas)
 
-(Iniciar proceso de pago) --> (Seleccionar los método de pago)
-(Iniciar proceso de pago) --> (Calcular los costos de envío)
-(Iniciar proceso de pago) --> (Validar el stock)
-(Iniciar proceso de pago) --> (Confirmar la compra)
-
-(Confirmar la compra) --> (Enviar un correo de confirmación)
-(Pago) --> (Procesar el pago)
-(Procesar el pago) --> (Pago aprobado) 
-(Procesar el pago) --> (Pago rechazado)
+(Administrador) --> (Administrar las categorías)
+(Administrador) --> (Registrar un nuevo producto)
 
 @enduml
