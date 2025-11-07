@@ -1,0 +1,24 @@
+@startuml
+actor Usuario
+actor Repartidor
+actor Administrador
+
+Usuario --> (Rastrear el pedido)
+Usuario --> (Abrir el reclamo)
+Usuario --> (Confirmar la entrega)
+
+
+(Confirmar la entrega) --> (Calificar el servicio)
+(Abrir el reclamo) --> (Subir las evidencias)
+
+Repartidor --> (Actualizar el estado del pedido)
+Repartidor --> (Notificar el intento de entrega)
+Repartidor --> (Confirmar la entrega)
+
+Administrador --> (Gestionar el reclamo)
+Administrador --> (Reembolsar el pedido)
+Administrador --> (Suspender el envío)
+Administrador --> (Abrir el reclamo)
+
+
+@enduml
