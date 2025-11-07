@@ -1,0 +1,19 @@
+@startuml
+actor Usuario
+actor Administrador
+
+Usuario --> (Registrar cuenta)
+Usuario --> (Iniciar sesión)
+Usuario --> (Cerrar sesión)
+Usuario --> (Recuperar contraseña)
+
+(Registrar cuenta) --> (Validar datos)
+(Registrar cuenta) --> (Enviar correo de confirmación)
+
+(Recuperar contraseña) --> (Correo de verificación)
+(Correo de verificación) --> (Notificación de cambio de contraseña)
+
+Administrador --> (Bloquear usuario)
+Administrador --> (Modificar datos de usuario)
+
+@enduml
