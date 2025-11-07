@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant V as Vendedor
+    participant A as Aplicación
+    participant BD as Base Datos
+
+    V->>A: Administrar el inventario
+    A->>V: Solicitar el producto
+    V->>A: Enviar los cambios
+    A->>BD: Actualizar el inventario
+    BD-->>A: Confirmación
+    A-->>V: Actualización exitosa
