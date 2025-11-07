@@ -1,15 +1,15 @@
 sequenceDiagram
     actor Usuario
-    participant App
+    participant Applicación
     participant Servidor
     participant Pasar el Pago
     participant BD
 
-    Usuario->>App: Confirmar la compra
-    App->>Servidor: Enviar la orden
+    Usuario->>Applicación: Confirmar la compra
+    Applicación->>Servidor: Enviar la orden
     Servidor->>PasarelaPago: Procesar el pago
     PasarelaPago-->>Servidor: Aprobación
     Servidor->>BD: Guardar el orden
     BD-->>Servidor: Confirmación
-    Servidor-->>App: Notificar la compra exitosa
-    App-->>Usuario: Mostrar la confirmación
+    Servidor-->>Applicación: Notificar la compra exitosa
+    Applicación-->>Usuario: Mostrar la confirmación
