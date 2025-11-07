@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant U as Usuario
+    participant A as Aplicación
+    participant S as Servidor
+    participant BD as Base Datos
+
+    U->>A: Selecciona el producto
+    A->>S: Solicita la información
+    S->>BD: Consultar los datos del producto
+    BD-->>S: Enviar la información
+    S-->>A: Mostrar los detalles
+    U->>A: Agregar productos al carrito
+    A->>S: Enviar la solicitud
+    S->>BD: Actualizar el carrito
+    BD-->>S: Confirmación
+    S-->>A: Carrito actualizado
+    A-->>U: Mostrar mensaje de éxito
