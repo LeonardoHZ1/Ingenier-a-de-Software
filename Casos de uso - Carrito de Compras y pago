@@ -1,0 +1,21 @@
+@startuml
+actor Usuario
+
+
+Usuario --> (Agregar los producto al carrito)
+Usuario --> (Eliminar los producto del carrito)
+Usuario --> (Pago)
+Usuario --> (Actualizar las cantidades)
+Usuario --> (Iniciar proceso de pago)
+
+(Iniciar proceso de pago) --> (Seleccionar los método de pago)
+(Iniciar proceso de pago) --> (Calcular los costos de envío)
+(Iniciar proceso de pago) --> (Validar el stock)
+(Iniciar proceso de pago) --> (Confirmar la compra)
+
+(Confirmar la compra) --> (Enviar un correo de confirmación)
+(Pago) --> (Procesar el pago)
+(Procesar el pago) --> (Pago aprobado) 
+(Procesar el pago) --> (Pago rechazado)
+
+@enduml
