@@ -1,0 +1,61 @@
+erDiagram
+    Usuario {
+        int id_usuario PK
+        varchar nombre
+        varchar apellido
+        varchar email
+        varchar contraseña
+        varchar telefono
+        varchar direccion
+    }
+
+    Categoria {
+        int id_categoria PK
+        varchar nombre
+    }
+
+    Producto {
+        int id_producto PK
+        varchar nombre
+        varchar descripcion
+        decimal precio
+        int stock
+    }
+
+    Carrito {
+        int id_carrito PK
+    }
+
+    Carrito_Producto {
+        int id_carrito FK
+        int id_producto FK
+        int cantidad
+    }
+
+    Pedido {
+        int id_pedido PK
+        date fecha
+        decimal total
+        varchar estado
+    }
+
+    Pedido_Producto {
+        int id_pedido FK
+        int id_producto FK
+        int cantidad
+    }
+
+    Reseña {
+        int id_reseña PK
+        int rating
+        varchar comentario
+    }
+
+    Usuario ||--o{ Carrito : "tiene"
+    Usuario ||--o{ Pedido : "hace"
+    Usuario ||--o{ Reseña : "escribe"
+    Categoria ||--o{ Producto : "contiene"
+    Producto ||--o{ Carrito_Producto : "en"
+    Carrito ||--o{ Carrito_Producto : ""contiene
+    Pedido ||--o{ Pedido_Producto : "incluye"
+    Producto ||--o{ Pedido_Producto : "ordena"
