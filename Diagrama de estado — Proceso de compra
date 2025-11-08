@@ -1,0 +1,24 @@
+@startuml
+[*] --> Explorando
+
+Explorando --> ViendoProducto : Selecciona producto
+ViendoProducto --> Explorando : Regresa
+
+ViendoProducto --> AgregandoCarrito : Agregar al carrito
+AgregandoCarrito --> Explorando
+
+AgregandoCarrito --> RevisandoCarrito : Usuario abre carrito
+
+RevisandoCarrito --> SeleccionaPago : Proceder al pago
+RevisandoCarrito --> Explorando : Seguir comprando
+
+SeleccionaPago --> ProcesandoPago
+ProcesandoPago --> PagoAprobado
+ProcesandoPago --> PagoRechazado
+
+PagoRechazado --> SeleccionaPago
+
+PagoAprobado --> CompraFinalizada
+CompraFinalizada --> [*]
+
+@enduml
