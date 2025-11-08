@@ -1,0 +1,62 @@
+@startuml
+entity "Usuario" as U {
+  +id_usuario : INT
+  nombre : VARCHAR
+  apellido : VARCHAR
+  email : VARCHAR
+  contraseña : VARCHAR
+  telefono : VARCHAR
+  direccion : VARCHAR
+}
+
+entity "Categoria" as C {
+  +id_categoria : INT
+  nombre : VARCHAR
+}
+
+entity "Producto" as P {
+  +id_producto : INT
+  nombre : VARCHAR
+  descripcion : VARCHAR
+  precio : DECIMAL
+  stock : INT
+}
+
+entity "Carrito" as CA {
+  +id_carrito : INT
+}
+
+entity "Carrito_Producto" as CP {
+  +id_carrito : INT
+  +id_producto : INT
+  cantidad : INT
+}
+
+entity "Pedido" as PE {
+  +id_pedido : INT
+  fecha : DATE
+  total : DECIMAL
+  estado : VARCHAR
+}
+
+entity "Pedido_Producto" as PP {
+  +id_pedido : INT
+  +id_producto : INT
+  cantidad : INT
+}
+
+entity "Reseña" as R {
+  +id_reseña : INT
+  rating : INT
+  comentario : VARCHAR
+}
+
+U ||--o{ CA
+U ||--o{ PE
+U ||--o{ R
+C ||--o{ P
+P ||--o{ CP
+CA ||--o{ CP
+PE ||--o{ PP
+P ||--o{ PP
+@enduml
